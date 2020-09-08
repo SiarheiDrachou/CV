@@ -1,0 +1,254 @@
+<template>
+    <section class="main__achievments">
+        <div class="main__article-achievments--list">
+            <div class="achievment-partners">
+                <img
+                    class="achievment-partners--img" 
+                    src="../../assets/img/partners.svg" 
+                    alt=" error partners img"
+                />
+
+                <p class="achievment-partners--text achievment-text"> Partners </p>
+            </div>
+
+            <div class="achievment-employees">
+                <img
+                    class="achievment-employees--img" 
+                    src="../../assets/img/employees.svg" 
+                    alt=" error employees img"
+                />
+
+                <p class="achievment-employees--text achievment-text"> Employees </p>
+            </div>
+
+            <div class="achievment-profit">
+                <img
+                    class="achievment-profit--img" 
+                    src="../../assets/img/profit.svg" 
+                    alt=" error profit img"
+                />
+
+                <p class="achievment-profit--text achievment-text"> Profit </p>
+            </div>
+
+            <div class="achievment-meetings">
+                <img
+                    class="achievment-meetings--img" 
+                    src="../../assets/img/meetings.svg" 
+                    alt=" error meetings img"
+                />
+
+                <p class="achievment-meetings--text achievment-text"> Meetings </p>
+            </div>
+        </div>
+    </section>
+</template>
+
+<style lang="scss" scoped>
+    .main__achievments {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #4D636F;
+        width: 100%;
+        height: 277px;
+
+        @media (max-width: 980px) {
+            height: 234px;
+        }
+
+        @media (max-width: 768px) {
+            height: 343px;
+        }
+
+        @media (max-width: 500px) {
+            height: 506px;
+        }
+
+        .main__article-achievments--list {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            width: 1188px;
+            height: 112px;
+
+            @media (max-width: 980px) {
+                width: 906px;
+                height: 87px;
+            }
+        
+            @media (max-width: 768px) {
+                flex-wrap: wrap;
+                width: 616px;
+                height: 211px;
+            }
+        
+            @media (max-width: 500px) {
+                width: 277px;
+                height: 410px;
+            }
+        }
+        
+        .achievment-employees--img {
+            height: 63px;
+            width: 82px;
+        
+            @media (max-width: 980px) {
+                height: 45px;
+                width: 59px;
+            }
+        
+            @media (max-width: 500px) {
+                height: 38px;
+                width: 49px;
+            }
+        }
+        
+        .achievment-partners--img {
+            height: 63px;
+            width: 55px;
+        
+            @media (max-width: 980px) {
+                height: 39px;
+                width: 233px;
+            }
+        
+            @media (max-width: 500px) {
+                height: 33px;
+                width: 233px;
+            }
+        }
+        
+        .achievment-profit--img {
+            height: 63px;
+            width: 233px;
+        
+            @media (max-width: 980px) {
+                height: 45px;
+                width: 168px;
+            }
+        
+            @media (max-width: 500px) {
+                height: 38px;
+                width: 140px;
+            }
+        }
+        
+        .achievment-meetings--img {
+            height: 63px;
+            width: 82px;
+        
+            @media (max-width: 980px) {
+                height: 45px;
+                width: 59px;
+            }
+        
+            @media (max-width: 500px) {
+                height: 38px;
+                width: 49px;
+            }
+        }
+
+        .achievment-text {
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 25px;
+            color: #FFFFFF;
+        }
+
+        .achievment-partners {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 192px;
+            height: 111px;
+
+            @media (max-width: 980px) {
+                height: 87px;
+            }
+
+            @media (max-width: 768px) {
+                width: 250px;
+                height: 80px;
+            }
+
+            @media (max-width: 500px) {
+                width: 304px;
+                height: 80px;
+            }
+        }
+
+        .achievment-employees {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 192px;
+            height: 111px;
+
+            @media (max-width: 980px) {
+                height: 87px;
+            }
+
+            @media (max-width: 768px) {
+                width: 250px;
+
+            }
+
+            @media (max-width: 500px) {
+                height: 80px;
+                width: 277px;
+            }
+        }
+
+        .achievment-profit {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 192px;
+            height: 109px;
+
+            @media (max-width: 980px) {
+                height: 87px;
+                width: 185px;
+            }
+
+            @media (max-width: 768px) {
+                height: 83px;
+                width: 250px;
+            }
+
+            @media (max-width: 500px) {
+                height: 80px;
+                width: 304px;
+            }
+        }
+
+        .achievment-meetings {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 315px;
+            height: 112px;
+
+            @media (max-width: 980px) {
+                height: 87px;
+                width: 181px;
+            }
+
+            @media (max-width: 768px) {
+                height: 84px;
+                width: 250px;
+            }
+
+            @media (max-width: 500px) {
+                height: 80px;
+                width: 277px;
+            }
+        }
+    }
+</style>

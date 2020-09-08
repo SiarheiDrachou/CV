@@ -1,0 +1,242 @@
+<template>
+    <footer class="footer">
+        <p class="footer__contacts--header"> 
+            <a name="Contacts"> Contacts </a> 
+        </p>
+
+        <form class="footer__contacts--form"> 
+            <input 
+                class="footer__input--name input" 
+                type="text"
+                required
+                minlength="2"
+                maxlength="50"
+                placeholder="Name"
+                >
+            <input 
+                class="footer__input--email input" 
+                type="email"
+                required
+                placeholder="Email"
+                >
+            <input 
+                class="footer__input--phone-number input" 
+                type="tel"
+                placeholder="Phone number"
+                >
+            <textarea 
+                class="footer__input--text-area" 
+                cols="30" 
+                rows="10"
+                required
+                placeholder="Your message"
+            ></textarea>
+
+            <button class="footer__button button"> Send Message </button>
+        </form>
+
+        <p class="footer__our-contacts--header"> Our contacts </p>
+
+        <div class="footer__our-contacts--office-1">
+            <p class="footer__our-contacts--text-header"> Office 1 </p>
+            <p class="footer__our-contacts--text"> Country </p>
+            <p class="footer__our-contacts--text"> City </p>
+            <p class="footer__our-contacts--text"> Street </p>
+            <p class="footer__our-contacts--text"> +9(999) 999 99 99 </p>
+        </div>
+        
+        <div class="footer__our-contacts--office-2">
+            <p class="footer__our-contacts--text-header"> Office 2 </p>
+            <p class="footer__our-contacts--text"> Country </p>
+            <p class="footer__our-contacts--text"> City </p>
+            <p class="footer__our-contacts--text"> Street </p>
+            <p class="footer__our-contacts--text"> +9(999) 999 99 99 </p>
+        </div>
+    </footer>
+</template>
+
+<style lang="scss" scoped>
+    .footer {
+        display: grid;
+        grid-template-columns: 500px 150px;
+        grid-template-rows: 63px 30px 140px 185px;
+        grid-template-areas: "footer__contacts--header footer__contacts--header"
+                            "footer__contacts--form footer__our-contacts--header"
+                            "footer__contacts--form footer__our-contacts--office-1"
+                            "footer__contacts--form footer__our-contacts--office-2";
+        grid-gap: 20px 160px;
+        justify-content: center;
+        background-color: #4D636F;
+        width: 100%;
+        height: 744px;
+        padding-top: 88px;
+        padding-bottom: 88px; 
+
+        @media (max-width: 980px) {
+            grid-gap: 20px 100px;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 220px);
+            grid-template-rows: 63px 450px 55px 138px;
+            grid-template-areas: "footer__contacts--header footer__contacts--header"
+                                "footer__contacts--form footer__contacts--form"
+                                "footer__our-contacts--header footer__our-contacts--header"
+                                "footer__our-contacts--office-1 footer__our-contacts--office-2";
+            grid-gap: 20px 63px;
+            height: 1000px;
+        }
+
+        @media (max-width: 500px) {
+            grid-template-columns: 286px;
+            grid-template-rows: 30px 250px 30px repeat(2, 188px);
+            grid-template-areas: "footer__contacts--header"
+                                "footer__contacts--form"
+                                "footer__our-contacts--header"
+                                "footer__our-contacts--office-1"
+                                "footer__our-contacts--office-2";
+            grid-gap: 20px;
+            height: 941px;
+        }
+
+        .footer__contacts--header {
+            grid-area: footer__contacts--header;
+            font-weight: 900;
+            font-size: 50px;
+            line-height: 63px;
+            color: #FFFFFF;
+        
+            @media (max-width: 500px) {
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
+        
+        .footer__contacts--form {
+            grid-area: footer__contacts--form;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        
+        .input {
+            width: 500px;
+            height: 54px;
+            background-color: #F2F3F7;
+            border-radius: 4px;
+            color: rgb(33, 33, 33);
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 18px;
+            color: rgb(33, 33, 33);
+            padding-left: 10px;
+            mix-blend-mode: normal;
+            font-family: 'Source Sans Pro';
+            border: none;
+        
+            @media (max-width: 500px) {
+                width: 280px;
+                height: 42px;
+            }
+        }
+
+        .input:hover {
+            background-color: #FEFEFE;
+        }
+
+        .input:focus {
+            color: #000000;
+        }
+        
+        .footer__input--text-area {
+            width: 500px;
+            height: 140px;
+            background-color: #F2F3F7;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 18px;
+            color: rgb(33, 33, 33);
+            margin-bottom: 10px;
+            padding-left: 10px;
+            mix-blend-mode: normal;
+            font-family: 'Source Sans Pro';
+        
+            @media (max-width: 500px) {
+                width: 280px;
+                height: 42px;
+            }
+        }
+
+        .footer__input--text-area:hover {
+            background-color: #FEFEFE;
+        }
+
+        .footer__input--text-area:focus {
+            color: #000000;
+        }
+        
+        .footer__button {
+            width: 500px;
+            height: 54px;
+            background: #E75A7C;
+            border-radius: 6px;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+            color: #FFFFFF;
+        
+            @media (max-width: 500px) {
+                width: 280px;
+                height: 42px;
+            }
+        }
+
+        .footer__button:hover {
+            background-color: #FA89A4;
+        }
+        
+        .footer__button:focus {
+            background-color: #E75A7C;
+            border: 2px dashed #FFBDCD;
+        }
+        
+        .footer__button:active {
+            background-color: #E31B4B;
+            border: none;
+        }
+        
+        .footer__our-contacts--header {
+            grid-area: footer__our-contacts--header;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 30px;
+            color: #FFFFFF;
+        
+        }
+        
+        .footer__our-contacts--text-header {
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 23px;
+            color: #FFFFFF;
+            margin-bottom: 25px;
+        }
+        
+        .footer__our-contacts--text {
+            font-size: 18px;
+            line-height: 23px;
+            color: #FFFFFF;
+            opacity: 0.5;
+        }
+        
+        .footer__our-contacts--office-1 {
+            grid-area: footer__our-contacts--office-1;
+        }
+        
+        .footer__our-contacts--office-1 {
+            grid-area: footer__our-contacts--office-2;
+        }
+    }
+</style>
