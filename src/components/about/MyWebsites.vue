@@ -9,8 +9,8 @@
             class="projects-img"
         >
             <div class="photo-description">
-                <p class="photo-description--header" v-text="mass.header"> PROJECT 1 </p>
-                <p class="photo-description--text" v-text="mass.text"> Brief description </p>
+                <p class="photo-description--header" v-text="mass.header"></p>
+                <p class="photo-description--text" v-text="mass.text"></p>
             </div>
             <img 
                 class="projects__img"
@@ -27,37 +27,37 @@
                 massCard: [
                     {
                         link: '/Car-blog',
-                        header: 'The first studies project',
+                        header: 'The first studies project Car-blog',
                         text: 'Studies project from Syntax school. Wrotes in november 2019. Used Html and scss.',
                         img: require(`../../assets/img/img--large-3.png`)
                     },
                     {
                         link: '/Company-landing',
-                        header: 'The second studies project',
+                        header: 'The second studies project Company-landing',
                         text: 'Studies project from Syntax school. Wrotes in december 2019. Used Html and scss.',
                         img: require(`../../assets/img/project-img-2.png`)
                     },
                     {
                         link: '/Money-converter',
-                        header: 'The third studies project',
+                        header: 'The third studies project Money-converter',
                         text: 'Studies project from Syntax school. Wrotes in december 2019. Used Html, Materialize and js.',
                         img: require(`../../assets/img/project-img-1.png`)
                     },
                     {
                         link: '/Picture-gallery',
-                        header: 'The forth studies project',
+                        header: 'The forth studies project Picture-gallery',
                         text: 'Studies project from Syntax school. Wrotes in january 2020. Used Html, Bootstrap and js.',
                         img: require(`../../assets/img/project-img-3.png`)
                     },
                     {
                         link: '/Website-questionnaire',
-                        header: 'The first project on Vue js',
+                        header: 'The first project on Vue js Website-questionnaire',
                         text: 'Wrotes in may 2020. Used Vue js framework, html5 and scss.',
                         img: require(`../../assets/img/compliance.jpg`)
                     },
                     {
                         link: '/Website-registration',
-                        header: 'The second project on Vue js',
+                        header: 'The second project on Vue js Website-registration',
                         text: 'Wrotes in july 2020. Used Vue js framework, html5 and scss.',
                         img: require(`../../assets/img/registration.jpg`)
                     },
