@@ -9,6 +9,8 @@
     <Studies />
 
     <More />
+
+    <MyWebsites />
   </div>
 </template>
 
@@ -18,6 +20,7 @@ import Skills from '../components/about/Skills'
 import Works from '../components/about/Works'
 import Studies from '../components/about/Studies'
 import More from '../components/about/More'
+import MyWebsites from '../components/about/MyWebsites'
 
   export default {
     components: {
@@ -25,7 +28,8 @@ import More from '../components/about/More'
       Skills,
       Works,
       Studies,
-      More
+      More,
+      MyWebsites
     }
   }
 </script>

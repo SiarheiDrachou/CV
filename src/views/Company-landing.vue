@@ -52,4 +52,14 @@
         width: 100%;
         font-family: 'Source Sans Pro';
     }
+
+    .main {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+
+    #nav {
+        background-color: white;
+    }
 </style>
