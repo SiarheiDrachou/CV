@@ -57,7 +57,7 @@ export default {
       this.headerHeight = this.$refs.header.$el.scrollHeight;
       let navEl = document.querySelector('#nav').scrollHeight;
       this.appHeight = window.innerHeight - navEl;
-      console.log(navEl, this.appHeight, window.innerHeight);
+      
       if( this.innerHeight > this.congrHeight + this.attentionHeight + this.formHeight + this.shieldHeight + this.headerHeight + navEl + 40) {
           this.mainHeight = this.innerHeight - navEl;
       }
