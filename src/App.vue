@@ -30,7 +30,7 @@
       scroll-behavior: smooth;
   }
 
-  body, p, h1, h2, h3 {
+  html, body, p, h1, h2, h3 {
       margin: 0;
       padding: 0;
   }
@@ -46,7 +46,7 @@
   #nav {
     max-width: 1280px;
     width: 100%;
-    padding: 30px;
+    padding: 10px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
@@ -65,5 +65,12 @@
 
   #app {
     margin: 0 auto;
+    height: 100%;
+    width: 100%;
+  }
+
+  body, html {
+    height: 100%;
+    width: 100%;
   }
 </style>
