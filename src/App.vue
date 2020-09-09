@@ -1,18 +1,60 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/Car-blog">Car blog</router-link> |
-      <router-link to="/Company-landing">Company landing</router-link> |
-      <router-link to="/Picture-gallery">Picture gallery</router-link> |
-      <router-link to="/Money-converter">Money converter</router-link> |
-      <router-link to="/Website-registration">Website registration</router-link> |
-      <router-link to="/Website-questionnaire">Website questionnaire</router-link> |
+      <router-link 
+        :to="mass.link"
+        v-for="(mass, id) in massLink" 
+        :key="id" 
+      >
+        {{mass.text}}
+      </router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+  export default {
+    data: function() {
+      return {
+        massLink: [
+          {
+            link: '/Home',
+            text: 'Home'
+          },
+          {
+            link: '/About',
+            text: 'About'
+          },
+          {
+            link: '/Car-blog',
+            text: 'Car-blog'
+          },
+          {
+            link: '/Company-landing',
+            text: 'Company-landing'
+          },
+          {
+            link: '/Money-converter',
+            text: 'Money-converter'
+          },
+          {
+            link: '/Picture-gallery',
+            text: 'Picture-gallery'
+          },
+          {
+            link: '/Website-questionnaire',
+            text: 'Website-questionnaire'
+          },
+          {
+            link: '/Website-registration',
+            text: 'Website-registration'
+          },
+        ]
+      }
+    }
+  }
+</script>
 
 <style lang="scss">
   @font-face {
