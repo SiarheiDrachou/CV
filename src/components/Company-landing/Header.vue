@@ -5,11 +5,13 @@
         <nav class="header__nav">
             <img 
                 class="close-img"
-                src="/images/close.png" 
+                src="../../assets/img/close.png" 
                 alt="error close img"
+                @click="dropMenu"
+                v-if="isClick"
             />
             
-            <ul class="header__list-menu">
+            <ul class="header__list-menu" :class="{'header__list-menu--active': isClick, 'header__list-menu': !isClick}">
                 <li class="header__menu-item">
                     <a class="header__link" href="#WhatWeDo"> What we do </a>
                 </li>
@@ -28,7 +30,7 @@
             </ul>
         </nav>
 
-        <div class="header__drop-down-menu">
+        <div class="header__drop-down-menu" @click="dropMenu" v-if="!isClick && !isView">
             <div class="header__drop-down-menu--item"></div>
             <div class="header__drop-down-menu--item"></div>
             <div class="header__drop-down-menu--item"></div>
@@ -47,7 +49,35 @@
 
 <script>
     export default {
-        
+        data: function() {
+            return {
+                isClick: false,
+                isView: false,
+                innerWidth: null
+            }
+        },
+        methods: {
+            dropMenu() {
+                this.isClick = !this.isClick;
+            },
+            windowWidth() {
+                this.innerWidth = window.innerWidth;
+
+                if(this.innerWidth > 980) {
+                    this.isView = true;
+                }
+                else {
+                    this.isView = false;
+                }
+            }
+        },
+        mounted() {
+            this.windowWidth();
+
+            window.onresize = () => {
+                this.windowWidth();
+            };
+        }
     }
 </script>
 
@@ -162,7 +192,6 @@
         }
         
         .header__drop-down-menu {
-            display: none;
             position: absolute;
             top: 21px;
             right: 20px;
@@ -170,11 +199,6 @@
             height: 19px;
             margin: 0;
             cursor: pointer;
-        
-        
-            @media (max-width: 980px) {
-                display: block;
-            }
         }
         
         .header__drop-down-menu--item {
@@ -261,7 +285,6 @@
             top: 75px;
             right: 25px;
             z-index: 4;
-            display: none;
             filter: invert(1);
             width: 20px;
             cursor: pointer;
