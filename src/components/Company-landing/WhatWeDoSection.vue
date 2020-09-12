@@ -25,25 +25,21 @@
         background-color: #F2F3F7;
         height: 375px;
         width: 100%;
-        padding-top: 70px;
-        padding-bottom: 70px;
+        padding: 70px 15px;
 
         @media (max-width: 980px) {
             height: 358px;
-            padding-top: 50px;
-            padding-bottom: 50px;
+            padding: 50px 15px;
         }
 
         @media (max-width: 768px) {
             height: 360px;
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding: 40px 15px;
         }
 
         @media (max-width: 500px) {
             height: 360px;
-            padding-top: 50px;
-            padding-bottom: 50px;
+            padding: 50px 15px;
         }
 
         .article__what-we-do--header {

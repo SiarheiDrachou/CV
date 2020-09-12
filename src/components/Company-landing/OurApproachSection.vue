@@ -95,8 +95,7 @@
         grid-gap: 40px;
         justify-content: center;
         background-color: white;
-        padding-top: 126px;
-        padding-bottom: 126px;
+        padding: 126px 15px;
         color: #3B424A;
 
         @media (max-width: 980px) {
@@ -107,8 +106,7 @@
                                 "main__our-approach--item-5 main__our-approach--item-5 main__our-approach--item-6"
                                 "main__our-approach--item-7 main__our-approach--item-8 main__our-approach--item-8"
                                 "main__our-approach--item-9 main__our-approach--item-9 main__our-approach--item-10";
-            padding-top: 111px;
-            padding-bottom: 111px;
+            padding: 111px 15px;
         }
 
         @media (max-width: 768px) {
@@ -124,8 +122,7 @@
                                 "main__our-approach--item-8"
                                 "main__our-approach--item-10" 
                                 "main__our-approach--item-9";
-            padding-top: 66px;
-            padding-bottom: 66px;
+            padding: 66px 15px;
         }
 
         @media (max-width: 500px) {
@@ -142,8 +139,7 @@
                                 "main__our-approach--item-8"
                                 "main__our-approach--item-10" 
                                 "main__our-approach--item-9";
-            padding-top: 48px;
-            padding-bottom: 48px;
+            padding: 48px 15px;
         }
 
         .main__our-approach--header {

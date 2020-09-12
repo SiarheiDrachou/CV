@@ -53,7 +53,7 @@
             margin-bottom: 42px;
         
             @media (max-width: 980px) {
-                width: 100%;
+                width: 90%;
                 margin-top: 30px;
                 margin-bottom: 46px;
             }

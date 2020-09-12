@@ -64,6 +64,7 @@
     .main__technologies {
         display: flex;
         justify-content: center;
+        padding: 0 15px;
 
         .main__technologies--list {
             display: grid;

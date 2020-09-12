@@ -81,8 +81,7 @@
         background-color: #F2F3F7;
         width: 100%;
         justify-content: center;
-        padding-top: 115px;
-        padding-bottom: 115px;
+        padding: 115px 15px;
 
         @media (max-width: 980px) {
             font-size: 48px;
