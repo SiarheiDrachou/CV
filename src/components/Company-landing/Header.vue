@@ -80,6 +80,10 @@
             grid-template-areas: "header__company-name header_drop-down-menu"
                                 "header__bg-image header__bg-image";
         }
+
+        .header__nav {
+            background-color: #4D636F !important;
+        }
         
         .header__company-name {
             grid-area: header__company-name;

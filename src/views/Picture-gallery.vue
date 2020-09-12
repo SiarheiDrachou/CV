@@ -181,7 +181,8 @@
         display: block;
     }
 
-    .material-placeholder {
-        display: inline !important;
+    .row,
+    .pagination {
+        display: block !important;
     }
 </style>

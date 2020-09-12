@@ -6,6 +6,7 @@
             :to="mass.link"
             v-for="(mass, id) in massCard" 
             :key="id" 
+            @click="clickLink(mass)"
             class="projects-img"
         >
             <div class="photo-description">
@@ -63,6 +64,11 @@
                     },
                 ]
             }
+        },
+        methods: {
+            clickLink(mass) {
+                console.log(mass);
+            }
         }
     }
 </script>
@@ -73,6 +79,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         margin-bottom: 50px;
+        padding: 0 15px;
     }
 
     .container__header {
@@ -84,17 +91,9 @@
     .projects-img {
         position: relative;
         width: 30%;
-        height: 440px;
         overflow: hidden;
         border-radius: 8px 8px 0px 0px;
-    
-        @media (max-width: 980px) {
-            height: 361px;
-        }
-    
-        @media (max-width: 500px) {
-            height: 350px;
-        }
+        margin-bottom: 15px;
     }
 
     .photo-description {
@@ -146,15 +145,8 @@
     .projects__img {
         position: relative;
         width: 100%;
+        height: 100%;
         overflow: hidden;
         border-radius: 8px 8px 0px 0px;
-    
-        @media (max-width: 980px) {
-            height: 361px;
-        }
-    
-        @media (max-width: 500px) {
-            height: 350px;
-        }
     }
 </style>

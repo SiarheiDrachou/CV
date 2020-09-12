@@ -67,7 +67,6 @@
         display: flex;
         padding: 25px 50px;
         justify-content: center;
-        align-items: none;
         overflow: hidden;
 
         @media (max-width: 750px) {

@@ -86,6 +86,7 @@
         }
         
         .header__nav {
+            background-color: #000000 !important;
             grid-area: header__nav;
 
             @media (max-width: 768px) {

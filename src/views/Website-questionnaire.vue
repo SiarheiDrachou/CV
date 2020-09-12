@@ -28,7 +28,7 @@
                 this.views = value;
             },
             resize() {
-                let navEl = document.querySelector('#nav').scrollHeight;
+                let navEl = document.querySelector('#app').firstChild.scrollHeight;
                 this.containerHeight = window.innerHeight - navEl;
                 this.height = window.innerHeight - navEl;
                 this.width = this.$refs.app.scrollWidth + 100;
@@ -107,7 +107,7 @@
     }
 
     #nav {
-        color: white;
+        background-color: black;
 
         a {
             color: white;
@@ -144,6 +144,7 @@
         width: 100%;
         overflow: hidden;
         margin: 0 auto;
+        background-color: black;
     }
 
     .body-img {
@@ -188,8 +189,8 @@
         position: absolute;
         top: 0;
         right: 0;
-        transform: translateX(100px);
-        width: 100px;
+        transform: translateX(110px);
+        width: 110px;
         height: 100%;
         background-color: black;
         z-index: 1;
@@ -199,8 +200,8 @@
         content: " ";
         position: absolute;
         top: 0;
-        transform: translateX(-100px);
-        width: 100px;
+        transform: translateX(-110px);
+        width: 110px;
         height: 100%;
         background-color: black;
         z-index: 1;
