@@ -14,8 +14,7 @@
 
 <style lang="scss" scoped>
     .footer {
-        position: relative;
-        top: -25px;
+        position: absolute;
         width: 100%;
 
         .footer__text {

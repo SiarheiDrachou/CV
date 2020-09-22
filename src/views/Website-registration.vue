@@ -55,10 +55,10 @@ export default {
       this.attentionHeight = this.$refs.attention.$el.scrollHeight;
       this.formHeight = this.$refs.form.$el.scrollHeight;
       this.headerHeight = this.$refs.header.$el.scrollHeight;
-      let navEl = document.querySelector('#app').firstChild.scrollHeight;
+      let navEl = document.querySelector('.homeLink').scrollHeight;
       this.appHeight = window.innerHeight - navEl;
       
-      if( this.innerHeight > this.congrHeight + this.attentionHeight + this.formHeight + this.shieldHeight + this.headerHeight + navEl + 40) {
+      if( this.innerHeight > this.congrHeight + this.attentionHeight + this.formHeight + this.shieldHeight + this.headerHeight + 40) {
           this.mainHeight = this.innerHeight - navEl;
       }
       else {
@@ -69,11 +69,14 @@ export default {
           this.shieldHeight = 160;
       }
       this.widthSize = this.shieldHeight - 20;
+      console.log(this.mainHeight + navEl, this.innerHeight);
       if(this.mainHeight + navEl <= this.innerHeight ) {
-        this.top = this.innerHeight - 85;
+        this.top = this.innerHeight - navEl - 35;
+        console.log(this.top);
       }
       else {
-        this.top = this.mainHeight - navEl + 35;
+        this.top = this.mainHeight;
+        console.log(this.top);
       }
     }
   },

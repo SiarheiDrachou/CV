@@ -1,8 +1,8 @@
 <template>
     <div>
-        <Loader v-if="!display" />
+        <Loader v-if="display" />
         
-        <div class="container" v-show="display">
+        <div class="container" v-show="!display">
             <h1 class="center-align"> Image gallery </h1>
 
             <div 
@@ -12,7 +12,7 @@
             </div>
         </div>
         
-        <ul class="pagination container center-align" ref="listEl" @click="nextPage($event)" v-show="display"></ul>
+        <ul class="pagination container center-align" ref="listEl" @click="nextPage($event)" v-show="!display"></ul>
     </div>
 </template>
 
@@ -28,7 +28,7 @@
                 currentPage: null,
                 newPage: null,
                 limit: 40,
-                display: false,
+                display: true,
                 start: 0
             }
         },
@@ -46,10 +46,6 @@
                     }
                     catch {
                         alert("So sorry, it's error...")
-                    }
-                    finally {
-                        this.display = true;
-                        this.start++;
                     }
                 }
             },
@@ -170,6 +166,8 @@
             this.paginationList();
             this.disabled();
             M.AutoInit();
+            this.display = false;
+            this.start++;
         }
     }
 </script>

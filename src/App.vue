@@ -1,6 +1,6 @@
 <template>
   <div id="app" >
-    <div class="homeLink" :class="{aboutLink: aboutLink, carBlogLink: carBlogLink, companyLandingLink: companyLandingLink}">
+    <div class="homeLink" :class="{ carBlog: carBlog, companyLanding: companyLanding}">
       <router-link 
         :to="mass.link"
         v-for="(mass, id) in massLink" 
@@ -17,13 +17,8 @@
   export default {
     data: function() {
       return {
-        aboutLink: false,
-        carBlogLink: false,
-        companyLandingLink: false,
-        moneyConverterLink: false,
-        pictureGalleryLink: false,
-        websiteQuestionnaireLink: false,
-        websiteRegistrationLink: false,
+        carBlog: false,
+        companyLanding: false,
         massLink: [
           {
             link: '/Home',
@@ -60,30 +55,15 @@
         ]
       }
     },
-    method: {
-      removedClassFromLink() {
-        this.aboutLink = false;
-        this.carBlogLink = false;
-        this.companyLandingLink = false;
-      }
-    },
     watch: {
       $route(to) {
         if(to.name === 'About' || to.name === 'Website-registration' || to.name === 'Money-converter' || to.name === 'Picture-gallery') {
-          this.aboutLink = true;
-          this.carBlogLink = false;
-          this.companyLandingLink = false;
+          this.carBlog = false;
+          this.companyLanding = true;
         }
         else if(to.name === 'Car-blog' || to.name === 'Website-questionnaire') {
-          this.aboutLink = false;
-          this.carBlogLink = true;
-          this.companyLandingLink = false;
-        }
-        else if(to.name === 'Company-landing') {
-          this.aboutLink = false;
-          this.carBlogLink = false;
-          this.companyLandingLink = true;
-          
+          this.carBlog = true;
+          this.companyLanding = false;
         }
       }
     }
@@ -115,10 +95,7 @@
     cursor: pointer;
   }
 
-  .homeLink,
-  .aboutLink, 
-  .carBlogLink, 
-  .companyLandingLink {
+  .homeLink {
     width: 100%;
     padding: 10px;
     margin: 0 auto;

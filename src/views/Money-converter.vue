@@ -84,9 +84,6 @@
                 catch {
                     alert("ERROR!!!")
                 }
-                finally {
-                    this.spinner = false;
-                }
             },
             buildThead(event) {
                 if(event.target.textContent.length == 3) {
@@ -109,6 +106,7 @@
         },
         mounted() {
             this.startSession();
+            this.spinner = false;
         }
     }
 </script>
