@@ -44,6 +44,11 @@ Vue.use(VueRouter)
     path: '/Website-questionnaire',
     name: 'Website-questionnaire',
     component: () => import('../views/Website-questionnaire.vue')
+  },
+  {
+    path: '/Contact-list',
+    name: 'Contact-list',
+    component: () => import('../views/Contact-list.vue')
   }
 ]
 

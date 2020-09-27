@@ -72,11 +72,9 @@ export default {
       console.log(this.mainHeight + navEl, this.innerHeight);
       if(this.mainHeight + navEl <= this.innerHeight ) {
         this.top = this.innerHeight - navEl - 35;
-        console.log(this.top);
       }
       else {
         this.top = this.mainHeight;
-        console.log(this.top);
       }
     }
   },

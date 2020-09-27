@@ -52,6 +52,10 @@
             link: '/Website-registration',
             text: 'Website-registration'
           },
+          {
+            link: '/Table',
+            text: 'Table'
+          }
         ]
       }
     },
