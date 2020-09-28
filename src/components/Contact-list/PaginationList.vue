@@ -1,11 +1,11 @@
 <template>
     <ul class="pagination container center-align" ref="listEl">
             <li 
-                class="left waves-effect arrowL" 
-                ref="left"
+                class="" 
                 v-if="data"
+                style="width: 150px"
             >
-                <span>{{paginationLength * (newPage - 1)}} - {{paginationData.length * newPage}}</span> из <span>{{data.length}}</span>
+                <span>{{paginationData.length * (newPage - 1)}} - {{(paginationData.length * newPage > data.length ? data.length : paginationData.length * newPage)}}</span> из <span>{{data.length}}</span>
             </li>
 
             <li 
@@ -19,9 +19,9 @@
 
             <li 
                 class="waves-effect"
-                v-for="(list, id) in pagination"
+                v-for="(list, id) in paginations"
                 :key="id"
-                @click="nextPage($event)"
+                @click="nextPage(id)"
             >
                 <a href="#!">{{id + 1}}</a>
             </li>
@@ -42,18 +42,16 @@ export default {
     data: function() {
         return {
             newPage: 1,
-            paginationData: []
+            paginationData: [],
+            paginations: []
         }
     },
     props: [
-        'data',
-        'paginationLength',
-        'dataBig',
-        'pagination'
+        'data'
     ],
     methods: {
-        nextPage(event) {
-            this.newPage = +event.target.textContent;
+        nextPage(id) {
+            this.newPage = id + 1;
 
             this.page();
         },
@@ -66,15 +64,16 @@ export default {
             let j = 0;
 
             for(let i = (this.newPage - 1) * 50; i < (this.data.length <= 50 ? this.data.length : this.newPage * 50); i++) {
-                this.paginationData[j] = this.dataBig[i];
+                this.paginationData[j] = this.data[i];
                 j++;
             }
 
-            this.$emit("page", this.newPage);
+            this.$emit("newPage", this.newPage);
         },
         left() {
             if (this.newPage > 1) {
                 this.newPage--;
+                
                 this.page();
             }
         },
@@ -84,23 +83,25 @@ export default {
                 
                 this.page();
             }
+        },
+        pagination() {
+            this.paginations = [];
+
+            for(let i = 0; i < Math.ceil(this.data.length / 50); i++) {
+                this.paginations[i] = i + 1;
+            }
+
+            this.page();
         }
     },
     watch: {
         data: function(data) {
             this.data = data;
+
+            this.pagination();
         },
         paginationData: function(paginationData) {
             this.paginationData = paginationData;
-        },
-        paginationLength: function(paginationLength) {
-            this.paginationLength = paginationLength;
-        },
-        dataBig: function(dataBig) {
-            this.dataBig = dataBig;
-        },
-        pagination: function(pagination) {
-            this.pagination = pagination;
         }
     }
 }

@@ -53,8 +53,8 @@
             text: 'Website-registration'
           },
           {
-            link: '/Table',
-            text: 'Table'
+            link: '/Contact-list',
+            text: 'Contact-list'
           }
         ]
       }
