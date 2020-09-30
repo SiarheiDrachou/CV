@@ -1,29 +1,22 @@
 <template>
-    <div>
+    <div class="scroll">
         <DropDown @contactsRequest="contactsRequest" />
 
-        <div class="create">
-            <p title="Добавление нового контакта">
-                <svg 
-                    width="1em" 
-                    height="1em" 
-                    viewBox="0 0 16 16" 
-                    class="bi bi-plus" 
-                    fill="currentColor" 
-                    xmlns="http://www.w3.org/2000/svg"
-                    @click="create"
-                >
-                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                </svg>
-            </p>
+        <div class="create" v-show="data">
+            <button @click="create" v-if="!isAdd">Добавить</button>
 
-            <TableForm v-if="isAdd" :data="data" @created="created" />
+            <TableForm v-else :data="data" @created="created" />
+
+            <button @click="cancel" v-if="isAdd">Отменить</button>
         </div>
-        
 
-        <TableList v-show="data" :data="data" :newPage="newPages" />
+        <Search v-show="data" @search="search" :dataArr="dataArr" />
+
+        <TableList v-show="data" :data="data" :newPage="newPages" @views="views"/>
 
         <PaginationList v-show="data" :data="data" @newPage="newPage" />
+
+        <Contact  :item="item" v-if="isClick"/>
     </div>
 </template>
 
@@ -32,22 +25,40 @@
     import PaginationList from '../components/Contact-list/PaginationList'
     import TableForm from '../components/Contact-list/TableForm'
     import DropDown from '../components/Contact-list/DropDown'
+    import Contact from '../components/Contact-list/Contact'
+    import Search from '../components/Contact-list/Search'
 
     export default {
         data: function() {
             return {
                 isAdd: false,
                 data: null,
-                newPages: 1
+                dataArr: null,
+                newPages: 1,
+                isClick: false,
+                item: null
             }
         },
         components: {
             TableList,
             PaginationList,
             TableForm,
-            DropDown
+            DropDown,
+            Contact,
+            Search
         },
         methods: {
+            search(result) {
+                this.data = result;
+                this.newPage = 1;
+            },
+            cancel() {
+                this.isAdd = false;
+            },
+            views(item, click) {
+                this.item = item;
+                this.isClick = click;
+            },
             create() { // Показываем поля для ввода данных нового пользователя
                 if(this.data) {
                     this.isAdd = true;
@@ -57,8 +68,9 @@
                 this.data = data;
                 this.isAdd = isAdd;
             },
-            contactsRequest(data) {
+            contactsRequest(data, dataArr) {
                 this.data = data;
+                this.dataArr = dataArr;
             },
             newPage(newPages) {
                 this.newPages = newPages;
@@ -73,6 +85,12 @@
             },
             newPages: function(newPages) {
                 this.newPages = newPages;
+            },
+            isClick: function(isClick) {
+                this.isClick = isClick;
+            },
+            dataArr: function(dataArr) {
+                this.dataArr = dataArr;
             }
         }
     }

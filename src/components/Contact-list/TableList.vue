@@ -49,10 +49,9 @@
                 <td 
                     v-for="(item, key) in items"
                     :key="key"
-                >
-                    <router-link v-if="key == 'firstName'" :to="{name: 'ContactInfo', params: { data: data, id: id }}" title="Переход к второй странице с данными этого пользователя"> {{ item }} </router-link>
-                    
-                    <span v-else-if="key !== 'address'" >{{ item }}</span>
+                    @click="viewInformation(items)"
+                >                    
+                    <span v-if="key !== 'address'" >{{ item }}</span>
                     
                     <span 
                         v-else 
@@ -91,7 +90,8 @@
             return {
                 tableHead: null,
                 list: null,
-                newList: null
+                newList: null,
+                isClick: true
             }
         },
         props: [
@@ -99,6 +99,20 @@
             'newPage'
         ],
         methods: {
+            scroll() {
+                let height = document.querySelector('.scroll').scrollHeight;
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: height,
+                        behavior: "smooth"
+                    });
+                });
+            },
+            viewInformation(item) {
+                this.scroll();
+
+                this.$emit('views', item, this.isClick);
+            },
             remove(id) { // Метод для удаления пользователя из таблицы контактов
                 if (confirm("Удалить пользователя")) {
                     this.data.splice(id, 1);
@@ -112,13 +126,18 @@
                 let j = 0;
 
                 for(let i = (this.newPage - 1) * 50; i < (this.data.length <= 50 ? this.data.length : this.newPage * 50); i++) {
-                    this.list[j] = this.data[i];
-                    j++;
+                    if(i == this.data.length) {
+                        return ;
+                    }
+                    else {
+                        this.list[j] = this.data[i];
+                        j++;
+                    }
                 }
             },
             sortIncrease(id) {
                 if(id == 'address') {
-                    this.data.sort(function(a, b) {
+                    this.list.sort(function(a, b) {
                         if ( a[`${id}`].city > b[`${id}`].city ) {
                             return -1;
                         }
@@ -128,7 +147,7 @@
                     });
                 }
                 else {
-                    this.data.sort(function(a, b) {
+                    this.list.sort(function(a, b) {
                         if ( a[`${id}`] > b[`${id}`] ) {
                             return 1;
                         }
@@ -137,11 +156,10 @@
                         }
                     });
                 }
-                this.page();
             },
             sortDecrease(id) {
                 if(id == 'address') {
-                    this.data.sort(function(a, b) {
+                    this.list.sort(function(a, b) {
                         if ( a[`${id}`].city > b[`${id}`].city ) {
                             return 1;
                         }
@@ -151,7 +169,7 @@
                     });
                 }
                 else {
-                    this.data.sort(function(a, b) {
+                    this.list.sort(function(a, b) {
                         if ( a[`${id}`] > b[`${id}`] ) {
                             return -1;
                         }
@@ -160,7 +178,6 @@
                         }
                     });
                 }
-                this.page();
             }
         },
         watch: {

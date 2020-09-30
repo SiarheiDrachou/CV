@@ -38,8 +38,6 @@
                 let data = new Object(); // Создаем новый пустой объект
 
                 for(let i = 0; i < this.$refs.form.length - 1; i++) { // Заполняем пустой объект данными из полей ввода
-                    console.log(this.$refs.form[i].getAttribute("placeholder"));
-
                     if(this.$refs.form[i].getAttribute("placeholder") == 'address') {
                         data[`${this.$refs.form[i].getAttribute("placeholder")}`] = new Object();
                         this.objectItem = data[`${this.$refs.form[i].getAttribute("placeholder")}`];

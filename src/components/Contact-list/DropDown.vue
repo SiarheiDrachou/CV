@@ -44,7 +44,7 @@ export default {
                     this.data = await this.dataRequest.json();
                     this.dataSmall = this.data;
 
-                    this.$emit("contactsRequest", this.data);
+                    this.$emit("contactsRequest", this.data, this.dataSmall);
                     }
                 catch {
                     alert("ERROR!!!")
@@ -57,7 +57,7 @@ export default {
                 this.data = this.dataSmall;
                 this.spinner = false;
 
-                this.$emit("contactsRequest", this.data);
+                this.$emit("contactsRequest", this.data, this.dataSmall);
             }
             if(event.target.textContent == 'Big' && this.dataBig == null) {
                 try {
@@ -65,7 +65,7 @@ export default {
                     this.data = await this.dataRequest.json();
                     this.dataBig = this.data;
 
-                    this.$emit("contactsRequest", this.data);
+                    this.$emit("contactsRequest", this.data, this.dataBig);
                     }
                 catch {
                     alert("ERROR!!!")
@@ -78,7 +78,7 @@ export default {
                 this.data = this.dataBig;
                 this.spinner = false;
 
-                this.$emit("contactsRequest", this.data);
+                this.$emit("contactsRequest", this.data, this.dataBig);
             }
         }
     }
