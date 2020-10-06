@@ -57,7 +57,7 @@
     },
     watch: {
       $route(to) {
-        if(to.name === 'About' || to.name === 'Website-registration' || to.name === 'Money-converter' || to.name === 'Picture-gallery') {
+        if(to.name === 'About' || to.name === 'Website-registration' || to.name === 'Money-converter' || to.name === 'Picture-gallery' || to.name === 'Contact-list') {
           this.carBlog = false;
           this.companyLanding = true;
         }

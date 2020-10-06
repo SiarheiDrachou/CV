@@ -204,6 +204,12 @@
     .scroll {
         width: 100%;
         overflow-x: scroll;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar{
+            width: 0px;
+        }
     }
     .table {
         width: 95% !important;
