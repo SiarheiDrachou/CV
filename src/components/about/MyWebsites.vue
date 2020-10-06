@@ -62,6 +62,12 @@
                         text: 'Wrotes in july 2020. Used Vue js framework, html5 and scss.',
                         img: require(`../../assets/img/registration.jpg`)
                     },
+                    {
+                        link: '/Contact-list',
+                        header: 'Test project for a vacancy Frontend Developer on Vue js Contact-list',
+                        text: 'Wrotes in september 2020. Used Vue js framework, html5 and scss.',
+                        img: require(`../../assets/img/contact-list.png`)
+                    },
                 ]
             }
         },

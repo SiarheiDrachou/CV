@@ -98,6 +98,7 @@
 
 
 <style lang="scss" scoped>
+    @import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
     .create {
         width: 95%;
         display: flex;

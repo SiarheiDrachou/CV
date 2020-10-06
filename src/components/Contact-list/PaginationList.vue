@@ -3,7 +3,7 @@
             <li 
                 class="pagination__item" 
                 v-if="data"
-                style="width: 150px"
+                style="min-width: 150px"
             >
                 <span>{{startSize}} - {{endSize}} </span> из <span> {{size}}</span>
             </li>
@@ -124,6 +124,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
         padding: 0 25px;
 
         &__item {

@@ -21,11 +21,7 @@
         companyLanding: false,
         massLink: [
           {
-            link: '/Home',
-            text: 'Home'
-          },
-          {
-            link: '/About',
+            link: '/',
             text: 'About'
           },
           {

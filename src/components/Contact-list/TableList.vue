@@ -1,87 +1,89 @@
 <template>
-    <table class="table" cellspacing="2px">
-        <thead class="thead">
-            <tr>
-                <th
-                    scope="col"
-                    v-for="(items, id) of tableHead"
-                    :key="id"
-                >
-                    {{id}}
-                    <p title="Сортировка по возрастанию">
-                        <svg 
-                            width="1em" 
-                            height="1em" 
-                            viewBox="0 0 16 16" 
-                            class="bi bi-caret-up-fill" 
-                            fill="currentColor" 
-                            xmlns="http://www.w3.org/2000/svg"
-                            @click="sortIncrease(id)"
-                        >
-                            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-                        </svg>
-                    </p>
-
-                    <p title="Сортировка по убыванию">
-                        <svg 
-                            width="1em" 
-                            height="1em" 
-                            viewBox="0 0 16 16" 
-                            class="bi bi-caret-down-fill" 
-                            fill="currentColor" 
-                            xmlns="http://www.w3.org/2000/svg"
-                            @click="sortDecrease(id)"
-                        >
-                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                        </svg>
-                    </p>
-                </th>
-                <th>
-                </th>
-            </tr>
-        </thead>
-        
-        <tbody class="tbody">
-            <tr 
-                v-for="(items, id) in list"
-                :key="id"
-            > 
-                <td 
-                    v-for="(item, key) in items"
-                    :key="key"
-                    @click="viewInformation(items)"
-                >                    
-                    <span v-if="key !== 'address'" >{{ item }}</span>
-                    
-                    <span 
-                        v-else 
-                        v-for="(address, keys) in item"
-                        :key="keys"
+    <div class="scroll">
+        <table class="table" cellspacing="2px">
+            <thead class="thead">
+                <tr>
+                    <th
+                        scope="col"
+                        v-for="(items, id) of tableHead"
+                        :key="id"
                     >
-                        {{ keys }} : {{ address }}
-                        <br />
-                    </span>
-                </td>
+                        {{id}}
+                        <p title="Сортировка по возрастанию">
+                            <svg 
+                                width="1em" 
+                                height="1em" 
+                                viewBox="0 0 16 16" 
+                                class="bi bi-caret-up-fill" 
+                                fill="currentColor" 
+                                xmlns="http://www.w3.org/2000/svg"
+                                @click="sortIncrease(id)"
+                            >
+                                <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                            </svg>
+                        </p>
 
-                <td>
-                    <p title="Удаление контакта">
-                        <svg 
-                            width="1em" 
-                            height="1em" 
-                            viewBox="0 0 16 16" 
-                            class="bi bi-trash" 
-                            fill="currentColor" 
-                            xmlns="http://www.w3.org/2000/svg"
-                            @click="remove(id)"
+                        <p title="Сортировка по убыванию">
+                            <svg 
+                                width="1em" 
+                                height="1em" 
+                                viewBox="0 0 16 16" 
+                                class="bi bi-caret-down-fill" 
+                                fill="currentColor" 
+                                xmlns="http://www.w3.org/2000/svg"
+                                @click="sortDecrease(id)"
+                            >
+                                <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                            </svg>
+                        </p>
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            
+            <tbody class="tbody">
+                <tr 
+                    v-for="(items, id) in list"
+                    :key="id"
+                > 
+                    <td 
+                        v-for="(item, key) in items"
+                        :key="key"
+                        @click="viewInformation(items)"
+                    >                    
+                        <span v-if="key !== 'address'" >{{ item }}</span>
+                        
+                        <span 
+                            v-else 
+                            v-for="(address, keys) in item"
+                            :key="keys"
                         >
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                        </svg>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                            {{ keys }} : {{ address }}
+                            <br />
+                        </span>
+                    </td>
+
+                    <td>
+                        <p title="Удаление контакта">
+                            <svg 
+                                width="1em" 
+                                height="1em" 
+                                viewBox="0 0 16 16" 
+                                class="bi bi-trash" 
+                                fill="currentColor" 
+                                xmlns="http://www.w3.org/2000/svg"
+                                @click="remove(id)"
+                            >
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                            </svg>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script>
@@ -199,6 +201,10 @@
 </script>
 
 <style lang="scss" scoped>
+    .scroll {
+        width: 100%;
+        overflow-x: scroll;
+    }
     .table {
         width: 95% !important;
         margin: 50px auto !important;
