@@ -124,6 +124,10 @@
   
   .companyLanding {
     background-color: #4D636F;
+
+    a {
+      color: white;
+    }
   }
 
   #app {

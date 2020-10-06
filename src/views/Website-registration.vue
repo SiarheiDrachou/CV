@@ -69,7 +69,7 @@ export default {
           this.shieldHeight = 160;
       }
       this.widthSize = this.shieldHeight - 20;
-      console.log(this.mainHeight + navEl, this.innerHeight);
+
       if(this.mainHeight + navEl <= this.innerHeight ) {
         this.top = this.innerHeight - navEl - 35;
       }

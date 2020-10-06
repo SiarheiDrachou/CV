@@ -154,7 +154,7 @@
                 this.$refs.cardImg.innerHTML = '';
 
                 for(let i = (+localStorage.getItem('page') - 1) * 10; i < +localStorage.getItem('page') * 10; i++) {
-                    let cardImage = `<img class="col l4 m6 s12 materialboxed" src="${this.imgJSON[i].download_url}">`;
+                    let cardImage = `<img class="col l3 m6 s12 materialboxed" style="margin: 2px;" src="${this.imgJSON[i].download_url}">`;
                     this.$refs.cardImg.insertAdjacentHTML('beforeend', cardImage);
                 }
                 M.AutoInit();

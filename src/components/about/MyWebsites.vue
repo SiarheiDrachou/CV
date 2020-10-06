@@ -2,22 +2,24 @@
     <div class="container">
         <h1 class="container__header">My websites</h1>
 
-        <router-link 
-            :to="mass.link"
-            v-for="(mass, id) in massCard" 
-            :key="id" 
-            @click="clickLink(mass)"
-            class="projects-img"
-        >
-            <div class="photo-description">
-                <p class="photo-description--header" v-text="mass.header"></p>
-                <p class="photo-description--text" v-text="mass.text"></p>
-            </div>
-            <img 
-                class="projects__img"
-                :src="mass.img" 
-            />
-        </router-link>
+        <div class="container-img">
+            <router-link 
+                :to="mass.link"
+                v-for="(mass, id) in massCard" 
+                :key="id" 
+                @click="clickLink(mass)"
+                class="projects-img"
+            >
+                <div class="photo-description">
+                    <p class="photo-description--header" v-text="mass.header"></p>
+                    <p class="photo-description--text" v-text="mass.text"></p>
+                </div>
+                <img 
+                    class="projects__img"
+                    :src="mass.img" 
+                />
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -30,7 +32,7 @@
                         link: '/Car-blog',
                         header: 'The first studies project Car-blog',
                         text: 'Studies project from Syntax school. Wrotes in november 2019. Used Html and scss.',
-                        img: require(`../../assets/img/img--large-3.png`)
+                        img: require(`../../assets/img/img--big.png`)
                     },
                     {
                         link: '/Company-landing',
@@ -60,7 +62,7 @@
                         link: '/Website-registration',
                         header: 'The second project on Vue js Website-registration',
                         text: 'Wrotes in july 2020. Used Vue js framework, html5 and scss.',
-                        img: require(`../../assets/img/registration.jpg`)
+                        img: require(`../../assets/img/log_in.png`)
                     },
                     {
                         link: '/Contact-list',
@@ -88,6 +90,11 @@
         padding: 0 15px;
     }
 
+    .container-img {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .container__header {
         width: 100%;
         margin-bottom: 50px;
@@ -97,9 +104,10 @@
     .projects-img {
         position: relative;
         width: 30%;
+        min-width: 150px;
         overflow: hidden;
         border-radius: 8px 8px 0px 0px;
-        margin-bottom: 15px;
+        margin: 15px auto;
     }
 
     .photo-description {
@@ -131,20 +139,20 @@
         
     .photo-description--header {
         position: absolute;
-        bottom: 108px;
-        left: 24px;
+        top: 20px;
+        left: 15px;
         font-weight: bold;
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 3vw;
+        line-height: 45px;
         color: #FFFFFF;
     }
     
     .photo-description--text {
         position: absolute;
-        bottom: 44px;
-        left: 24px;
-        font-size: 16px;
-        line-height: 20px;
+        bottom: 20px;
+        left: 15px;
+        font-size: 2vw;
+        line-height: 35px;
         color: #FFFFFF;
     }
         

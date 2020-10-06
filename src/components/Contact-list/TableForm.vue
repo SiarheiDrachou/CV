@@ -72,10 +72,11 @@
         padding: 0 10px;
 
         &__input {
-            border: 1px solid black;
-            padding-left: 5px;
-            margin-right: 15px;
-            margin-top: 5px;
+            border: 1px solid black !important;
+            padding-left: 5px !important;
+            margin-right: 15px !important;
+            margin-top: 5px !important;
+            width: 300px !important;
         }
     }
 </style>

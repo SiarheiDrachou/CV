@@ -49,6 +49,9 @@
             window.onresize = () => {
                 this.resize();
             };
+        },
+        destroyed() {
+            //this.resize();
         }
     }
 </script>

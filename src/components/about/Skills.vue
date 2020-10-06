@@ -26,9 +26,11 @@
         }
 
         &-list {
+            padding: 0 20px;
 
             &__item {
                 text-align: left;
+                list-style-type: none;
             }
 
         }

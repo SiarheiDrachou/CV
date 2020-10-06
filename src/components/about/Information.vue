@@ -75,7 +75,7 @@
         }
 
         &__img {
-            width: 150px;
+            width: 170px;
             margin-right: 50px;
 
             @media (max-width: 750px) {

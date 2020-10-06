@@ -207,7 +207,7 @@
     }
     .table {
         width: 95% !important;
-        margin: 50px auto !important;
+        margin: 20px auto !important;
     }
 
     th, td {

@@ -1,5 +1,5 @@
 <template>
-    <ul class="pagination container center-align" ref="listEl">
+    <ul class="pagination" ref="listEl">
             <li 
                 class="pagination__item" 
                 v-if="data"
@@ -125,7 +125,7 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        padding: 0 25px;
+        padding: 0 0 0 25px;
 
         &__item {
             list-style-type: none;

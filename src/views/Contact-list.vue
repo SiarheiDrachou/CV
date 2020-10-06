@@ -12,6 +12,8 @@
 
         <Search v-show="data" @search="search" :dataArr="dataArr" />
 
+        <PaginationList v-show="data" :data="data" @newPage="newPage" />
+
         <TableList v-show="data" :data="data" :newPage="newPages" @views="views"/>
 
         <PaginationList v-show="data" :data="data" @newPage="newPage" />
